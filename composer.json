@@ -4,21 +4,21 @@
   },
   "scripts": {
     "install-dev": [
-        "@composer update --dev",
         "rm -rf .env",
         "echo \"[app]\nstatus=dev\ndebug=true\" > .env",
+        "@composer update --dev",
         "@composer dumpautoload"
     ],
     "install-debug": [
-        "@composer update --dev",
         "rm -rf .env",
         "echo \"[app]\nstatus=debug\ndebug=true\" > .env",
+        "@composer update --dev",
         "@composer dumpautoload",
         "@composer clearcache"
     ],
     "install-online": [
-        "@composer update --no-dev",
         "rm -rf .env",
+        "@composer update --no-dev",
         "@composer dumpautoload",
         "@composer clearcache"
     ]
