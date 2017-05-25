@@ -1,5 +1,24 @@
 {
   "require": {
     "huangdijia/deeka": "dev-master"
+  },
+  "scripts": {
+    "install-dev": [
+        "@composer update --dev",
+        "rm -rf .env",
+        "echo \"[app]\nstatus=dev\ndebug=true\" > .env",
+        "@composer dumpautoload"
+    ],
+    "install-debug": [
+        "@composer update --dev",
+        "rm -rf .env",
+        "echo \"[app]\nstatus=debug\ndebug=true\" > .env",
+        "@composer dumpautoload"
+    ],
+    "install-online": [
+        "@composer update --no-dev",
+        "rm -rf .env",
+        "@composer dumpautoload"
+    ]
   }
 }
