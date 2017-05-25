@@ -13,12 +13,14 @@
         "@composer update --dev",
         "rm -rf .env",
         "echo \"[app]\nstatus=debug\ndebug=true\" > .env",
-        "@composer dumpautoload"
+        "@composer dumpautoload",
+        "@composer clearcache"
     ],
     "install-online": [
         "@composer update --no-dev",
         "rm -rf .env",
-        "@composer dumpautoload"
+        "@composer dumpautoload",
+        "@composer clearcache"
     ]
   }
 }
