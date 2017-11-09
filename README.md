@@ -1,5 +1,5 @@
 # 项目名称
-`deeka-demo`
+`deeka-example`
 
 # 创建新项目
 
