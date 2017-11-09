@@ -5,7 +5,7 @@
 
 ## 安装并创建目录
 ~~~bash
-wget https://raw.githubusercontent.com/huangdijia/deeka-demo/master/composer.json
+wget https://raw.githubusercontent.com/huangdijia/deeka-example/master/composer.json
 composer new-project
 ~~~
 
