@@ -9,9 +9,9 @@
         "@composer update --dev",
         "@composer dumpautoload"
     ],
-    "install-debug": [
+    "install-develop": [
         "rm -rf .env",
-        "echo \"[app]\nstatus=debug\ndebug=true\" > .env",
+        "echo \"[app]\nstatus=develop\ndebug=true\" > .env",
         "@composer update --dev",
         "@composer dumpautoload",
         "@composer clearcache"
@@ -21,6 +21,24 @@
         "@composer update --no-dev",
         "@composer dumpautoload",
         "@composer clearcache"
+    ],
+    "new-project": [
+        "@composer install",
+
+        "mkdir -p app/index/controller",
+        "mkdir -p public/cache",
+        "mkdir -p public/data",
+        "mkdir -p public/logs",
+
+        "echo \"composer.lock\" > .gitignore",
+        "echo \"*\n!.gitignore\" > public/cache/.gitignore",
+        "echo \"*\n!.gitignore\" > public/data/.gitignore",
+        "echo \"*\n!.gitignore\" > public/logs/.gitignore",
+
+        "php -r \"echo base64_decode('PD9waHAKbmFtZXNwYWNlIGFwcFxpbmRleFxjb250cm9sbGVyOwoKY2xhc3MgSW5kZXgKewogICAgcHVibGljIGZ1bmN0aW9uIGluZGV4KCkKICAgIHsKICAgICAgICBlY2hvICJIZWxsbywgRGVla2EhIjsKICAgIH0KfQ==');\" > app/index/controller/Index.php",
+        "php -r \"echo base64_decode('PD9waHAKcmV0dXJuIFsKICAgIC8vICdb6YWN572u5ZCNXScgPT4gJ1vphY3nva7pobldJwpdOw==');\" > app/config.php",
+        "php -r \"echo base64_decode('PD9waHAKcmVxdWlyZSBkaXJuYW1lKF9fRElSX18pIC4gIi92ZW5kb3IvYXV0b2xvYWQucGhwIjs=');\" > public/index.php",
+        "php public/index.php"
     ]
   }
 }
