@@ -1,6 +1,6 @@
 {
   "require": {
-    "huangdijia/deeka": "dev-master"
+    "huangdijia/deeka": "^2.6"
   },
   "scripts": {
     "install-dev": [

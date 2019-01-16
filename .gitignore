@@ -1,2 +1,8 @@
+composer.lock
+.env
 .vscode
+.*.log
+*.zip
+*.rar
+*.dat
 vendor
