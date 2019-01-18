@@ -1,6 +1,8 @@
 {
+    "name": "deeka-demo",
+    "description": "demo for deeka framework",
   "require": {
-    "huangdijia/deeka": "^2.6"
+    "huangdijia/deeka": "^2.0"
   },
   "scripts": {
     "install-dev": [
