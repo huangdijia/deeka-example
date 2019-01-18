@@ -1,46 +1,51 @@
 {
     "name": "deeka-demo",
     "description": "demo for deeka framework",
-  "require": {
-    "huangdijia/deeka": "^2.0"
-  },
-  "scripts": {
-    "install-dev": [
-        "rm -rf .env",
-        "echo \"[app]\nstatus=dev\ndebug=true\" > .env",
-        "@composer update --dev",
-        "@composer dumpautoload"
-    ],
-    "install-develop": [
-        "rm -rf .env",
-        "echo \"[app]\nstatus=develop\ndebug=true\" > .env",
-        "@composer update --dev",
-        "@composer dumpautoload",
-        "@composer clearcache"
-    ],
-    "install-online": [
-        "rm -rf .env",
-        "@composer update --no-dev",
-        "@composer dumpautoload",
-        "@composer clearcache"
-    ],
-    "new-project": [
-        "@composer install",
+    "require": {
+        "huangdijia/deeka": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    },
+    "scripts": {
+        "install-dev": [
+            "rm -rf .env",
+            "echo \"[app]\nstatus=dev\ndebug=true\" > .env",
+            "@composer update --dev",
+            "@composer dumpautoload"
+        ],
+        "install-develop": [
+            "rm -rf .env",
+            "echo \"[app]\nstatus=develop\ndebug=true\" > .env",
+            "@composer update --dev",
+            "@composer dumpautoload",
+            "@composer clearcache"
+        ],
+        "install-online": [
+            "rm -rf .env",
+            "@composer update --no-dev",
+            "@composer dumpautoload",
+            "@composer clearcache"
+        ],
+        "new-project": [
+            "@composer install",
 
-        "mkdir -p app/index/controller",
-        "mkdir -p public/cache",
-        "mkdir -p public/data",
-        "mkdir -p public/logs",
+            "mkdir -p app/index/controller",
+            "mkdir -p public/cache",
+            "mkdir -p public/data",
+            "mkdir -p public/logs",
 
-        "echo \"composer.lock\n.env\n.vscode\n.*.log\n*.zip\n*.rar\n*.dat\nvendor\" > .gitignore",
-        "echo \"*\n!.gitignore\" > public/cache/.gitignore",
-        "echo \"*\n!.gitignore\" > public/data/.gitignore",
-        "echo \"*\n!.gitignore\" > public/logs/.gitignore",
+            "echo \"composer.lock\n.env\n.vscode\n.*.log\n*.zip\n*.rar\n*.dat\nvendor\" > .gitignore",
+            "echo \"*\n!.gitignore\" > public/cache/.gitignore",
+            "echo \"*\n!.gitignore\" > public/data/.gitignore",
+            "echo \"*\n!.gitignore\" > public/logs/.gitignore",
 
-        "php -r \"echo base64_decode('PD9waHAKbmFtZXNwYWNlIGFwcFxpbmRleFxjb250cm9sbGVyOwoKY2xhc3MgSW5kZXgKewogICAgcHVibGljIGZ1bmN0aW9uIGluZGV4KCkKICAgIHsKICAgICAgICBlY2hvICJIZWxsbywgRGVla2EhIjsKICAgIH0KfQ==');\" > app/index/controller/Index.php",
-        "php -r \"echo base64_decode('PD9waHAKcmV0dXJuIFsKICAgIC8vICdb6YWN572u5ZCNXScgPT4gJ1vphY3nva7pobldJwpdOw==');\" > app/config.php",
-        "php -r \"echo base64_decode('PD9waHAKcmVxdWlyZSBkaXJuYW1lKF9fRElSX18pIC4gIi92ZW5kb3IvYXV0b2xvYWQucGhwIjs=');\" > public/index.php",
-        "php public/index.php"
-    ]
-  }
+            "php -r \"echo base64_decode('PD9waHAKbmFtZXNwYWNlIGFwcFxpbmRleFxjb250cm9sbGVyOwoKY2xhc3MgSW5kZXgKewogICAgcHVibGljIGZ1bmN0aW9uIGluZGV4KCkKICAgIHsKICAgICAgICBlY2hvICJIZWxsbywgRGVla2EhIjsKICAgIH0KfQ==');\" > app/index/controller/Index.php",
+            "php -r \"echo base64_decode('PD9waHAKcmV0dXJuIFsKICAgIC8vICdb6YWN572u5ZCNXScgPT4gJ1vphY3nva7pobldJwpdOw==');\" > app/config.php",
+            "php -r \"echo base64_decode('PD9waHAKcmVxdWlyZSBkaXJuYW1lKF9fRElSX18pIC4gIi92ZW5kb3IvYXV0b2xvYWQucGhwIjs=');\" > public/index.php",
+            "php public/index.php"
+        ]
+    }
 }
