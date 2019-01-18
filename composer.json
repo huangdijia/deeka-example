@@ -32,7 +32,7 @@
         "mkdir -p public/data",
         "mkdir -p public/logs",
 
-        "echo \"composer.lock\n.env\n.vscode\n.*.log\n*.zip\n*.rar\n*.dat\" > .gitignore",
+        "echo \"composer.lock\n.env\n.vscode\n.*.log\n*.zip\n*.rar\n*.dat\nvendor\" > .gitignore",
         "echo \"*\n!.gitignore\" > public/cache/.gitignore",
         "echo \"*\n!.gitignore\" > public/data/.gitignore",
         "echo \"*\n!.gitignore\" > public/logs/.gitignore",
